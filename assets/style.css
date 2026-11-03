@@ -1,0 +1,240 @@
+/* Fonts: Inter (SIL Open Font License), self-hosted, Latin subset */
+@font-face{font-family:"Inter";src:url(fonts/inter-light.woff) format("woff");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter";src:url(fonts/inter-light-italic.woff) format("woff");font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:"Inter";src:url(fonts/inter-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter";src:url(fonts/inter-medium.woff) format("woff");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter";src:url(fonts/inter-semibold.woff) format("woff");font-weight:600 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter Display";src:url(fonts/inter-display-light.woff) format("woff");font-weight:300;font-style:normal;font-display:swap}
+
+/* Palette taken from the CV (tccv.cls): ink #303030, claret #801010, slate #506060, straw #F5DD9D */
+:root{
+  --bg:#242424; --panel:#2b2b2b; --ink:#d9d4cb; --muted:#a29d95; --line:#4d4a47;
+  --claret:#e39a9a; --straw:#f5dd9d; --straw-ink:#303030; --link:#9fc2c2;
+  --serif:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--serif)}
+a{color:var(--link);text-underline-offset:3px}
+a:hover{color:var(--ink)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--straw);outline-offset:3px;border-radius:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+.skip{position:absolute;left:-999px;top:0;background:var(--straw);color:var(--straw-ink);padding:.5rem 1rem;z-index:9}
+.skip:focus{left:1rem;top:1rem}
+
+/* header */
+.top{display:flex;align-items:center;gap:1.5rem;padding:1.5rem 0;font:400 .95rem var(--sans)}
+.brand{font:700 1.15rem var(--serif);color:var(--ink);text-decoration:none;margin-right:auto}
+.top a{color:var(--muted);text-decoration:none}
+.top a:hover,.top a[aria-current]{color:var(--ink)}
+.lang{border:1px solid var(--line);border-radius:99px;padding:.1rem .7rem}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:center;padding:3rem 0 3.5rem}
+.hero h1{font:400 clamp(2.2rem,5vw,3.2rem)/1.1 var(--serif);margin:0 0 1rem;letter-spacing:-.005em}
+.hero .sub{font-size:1.25rem;color:#c4beb4;margin:0 0 1.5rem;max-width:30em}
+.hero .who{font:400 .95rem var(--sans);color:var(--muted);margin:0 0 .5rem}
+.btn{display:inline-block;background:var(--straw);color:var(--straw-ink);padding:.6rem 1.2rem;border-radius:3px;font:600 .95rem var(--sans);text-decoration:none}
+.btn:hover{background:#fff;color:var(--straw-ink)}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--line);margin-left:.5rem}
+.btn.ghost:hover{border-color:var(--ink);background:none;color:var(--ink)}
+
+/* photo placeholders: replace with <img> */
+.ph{aspect-ratio:4/3;border-radius:3px;background:linear-gradient(135deg,#5b2b2b,#303a3a);display:flex;align-items:flex-end;padding:.75rem;font:.8rem var(--sans);color:#ffffffb3}
+.fig{aspect-ratio:auto;min-height:7rem;align-items:center;margin:.75rem 0;max-width:42rem}
+.fig a{color:#fff;text-underline-offset:3px}
+.photo{width:100%;height:auto;border-radius:3px;display:block}
+
+/* sections */
+section{padding-bottom:3.5rem;scroll-margin-top:1rem}
+h2{font:400 1.5rem/1.2 var(--serif);font-variant:small-caps;letter-spacing:.05em;color:var(--claret);border-bottom:1px solid var(--claret);padding-bottom:.35rem;margin:0 0 1.25rem}
+.intro{color:#c4beb4}
+p{max-width:none}
+
+/* CV-like entries */
+.ev{display:grid;grid-template-columns:8.5rem 1fr;gap:1.5rem;padding:.9rem 0;border-bottom:1px solid #3b3936}
+.ev:last-child{border-bottom:0}
+.when{text-align:right;font-variant:small-caps;color:var(--muted);letter-spacing:.03em;padding-top:.25rem}
+.org{font:400 .9rem var(--sans);color:var(--muted)}
+.ev h3{font:italic 400 1.4rem/1.3 var(--serif);margin:.1rem 0 .2rem}
+.ev p{margin:.3rem 0;color:#c4beb4}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:.5rem 0;padding:0;font:.8rem var(--sans)}
+.tags li{border:1px solid var(--line);border-radius:3px;padding:.05rem .55rem;color:var(--muted)}
+details{margin:.5rem 0}
+summary{cursor:pointer;color:var(--link);font:.9rem var(--sans)}
+.psr{display:grid;grid-template-columns:6.5rem 1fr;gap:.4rem 1rem;margin:.75rem 0 0;font-size:1rem}
+.psr dt{font:600 .85rem var(--sans);color:var(--muted);padding-top:.25rem}
+.psr dd{margin:0;color:#c4beb4}
+.todo{color:var(--straw)}
+
+/* publications */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1rem}
+.filters button{font:.9rem var(--sans);background:none;border:1px solid var(--line);color:var(--muted);padding:.25rem .9rem;border-radius:99px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--straw);border-color:var(--straw);color:var(--straw-ink)}
+.pubs{list-style:none;margin:0;padding:0}
+.pub{display:grid;grid-template-columns:4rem 1fr;gap:1rem;padding:.75rem 0;border-top:1px solid #3b3936}
+.pub[hidden]{display:none}
+.pub .y{color:var(--muted);text-align:right;font-variant:small-caps}
+.pub .t{margin:0}
+.pub .a,.pub .v{margin:0;color:var(--muted);font-size:.95rem}
+.pub .a b{color:var(--ink)}
+
+/* contact */
+.box{background:var(--straw);color:var(--straw-ink);padding:1.25rem 1.5rem;border-radius:3px;max-width:30rem}
+.box a{color:var(--straw-ink);font-weight:700}
+.box p{margin:.15rem 0}
+footer{border-top:1px solid var(--line);padding:1.25rem 0 2.5rem;font:.85rem var(--sans);color:var(--muted)}
+footer a{color:var(--muted)}
+
+@media (max-width:760px){
+  .top{flex-wrap:wrap;gap:.5rem 1rem}.brand{width:100%}
+  .hero{grid-template-columns:1fr;gap:1.5rem}
+  .ev{grid-template-columns:1fr;gap:0}.when{text-align:left}
+  .psr{grid-template-columns:1fr}
+  .pub{grid-template-columns:1fr;gap:0}.pub .y{text-align:left}
+  .btn.ghost{margin:.5rem 0 0}
+}
+.shot{margin:.75rem 0;max-width:42rem}
+.shot img{width:100%;height:auto;border-radius:3px;display:block}
+.shot figcaption{font:.75rem var(--sans);color:var(--muted);margin-top:.35rem}
+.hero-photo{aspect-ratio:3/2;object-fit:cover;border-radius:14px}
+.shot .imgs{display:grid;gap:.4rem}
+.shot.n2{max-width:32rem}
+.shot.n2 .imgs{grid-template-columns:1fr 1fr}
+.shot.n5 .imgs{grid-template-columns:repeat(5,1fr)}
+.shot.multi img{aspect-ratio:var(--ar,1/1);object-fit:cover}
+.shot.n2 img{--ar:14/15}
+.shot.n5 img{--ar:4/3}
+@media (max-width:560px){.shot.n5 .imgs{grid-template-columns:repeat(3,1fr)}}
+.hero h1{text-wrap:balance}
+/* projects as cards */
+.proj h3 a{color:inherit;text-decoration-color:var(--claret);text-underline-offset:4px}
+.proj .subt{color:var(--muted);margin:.1rem 0 .6rem;font-style:italic}
+.proj .role{margin:.5rem 0}
+.proj .pd h4{font:600 .95rem var(--sans);color:var(--straw);margin:1.2rem 0 .4rem}
+.proj .pd .psr{margin-top:.2rem}
+.plist{margin:.2rem 0;padding-left:1.1rem}.plist li{margin:.25rem 0}
+.chip{display:inline-block;font:.7rem var(--sans);border:1px solid var(--line);color:var(--muted);border-radius:3px;padding:.05rem .4rem;margin-left:.35rem;vertical-align:middle}
+.pubshot{margin:.6rem 0 .2rem;max-width:30rem}
+.pubshot.n2{max-width:20rem}
+/* exact CV claret (#801010) as accent: fills and rules, light text on top */
+:root{--red:#801010;--on-red:#f5ece6}
+h2{color:var(--ink);border-bottom:3px solid var(--red)}
+h2::before{content:"";display:inline-block;width:.55rem;height:1.1rem;background:var(--red);margin-right:.6rem;vertical-align:-.1rem}
+.tags li,.chip{background:transparent;border:1px solid var(--red);color:var(--ink)}
+.proj h3 a{text-decoration-color:var(--red);text-decoration-thickness:2px}
+.filters button[aria-pressed=true]{background:var(--red);border-color:var(--red);color:var(--on-red)}
+
+/* Inter Light look */
+body{font-size:1rem;font-weight:300}
+.brand{font-weight:600}
+.hero h1{font-family:"Inter Display","Inter",sans-serif;font-weight:300;letter-spacing:-.04em;font-size:clamp(2.6rem,6vw,3.8rem)}
+h2{font-variant:normal;font-weight:400;font-size:1.3rem;letter-spacing:-.01em}
+.ev h3,.proj h3{font-style:normal;font-weight:500}
+.proj .subt{font-style:normal}
+
+/* Justified About text on wide screens, with automatic hyphenation (needs the lang attribute) */
+@media (min-width:760px){
+  #about p{text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
+}
+
+/* Role as bullet list */
+.proj .role b{font-weight:500}
+.proj .role ul{margin:.25rem 0 0;padding-left:1.1rem}
+.proj .role li{margin:.15rem 0}
+
+/* Hero grid: photo top = top of the title, photo bottom = last line of the description */
+.hero{display:grid;grid-template-columns:1.2fr 1fr;column-gap:3rem;row-gap:0;align-items:stretch;
+  grid-template-areas:"who who" "hd photo" "cta .";padding:3rem 0 3.5rem}
+.hero .who{grid-area:who;margin:0 0 .75rem}
+.hero .hd{grid-area:hd;display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+.hero .hd h1{margin:-.12em 0 1rem}
+.hero .hd .sub{margin:0}
+.hero .cta{grid-area:cta;margin-top:1.5rem}
+.hero .hero-photo{grid-area:photo;width:100%;height:auto;align-self:start;display:block}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;grid-template-areas:"who" "hd" "cta" "photo";row-gap:0}
+  .hero .cta{margin:1.25rem 0 1.5rem}
+}
+
+/* Years share a baseline with the first line of the entry (funder / organisation) */
+.ev{align-items:first baseline}
+.ev .when{padding-top:0}
+@media (max-width:760px){.ev{align-items:start}}
+.ev .when{font-size:.9rem;font-variant-numeric:tabular-nums}
+
+/* Role and Main publications are both collapsible and look the same */
+.proj details{margin:.25rem 0}
+.proj details>summary{font:500 1rem var(--sans);color:var(--ink)}
+.proj details>summary::marker{color:var(--ink)}
+.proj .role ul,.proj .plist{margin:.25rem 0 .5rem;padding-left:1.1rem}
+.proj .role li,.proj .plist li{font-size:1rem;margin:.2rem 0}
+.proj details>summary::marker{color:#cf5555}
+
+.hero .who{white-space:nowrap}
+@media (max-width:760px){.hero .who{white-space:normal}}
+
+.hero .cta .btn.ghost{margin:0}
+
+/* Justify the project section intro and the project descriptions (wide screens) */
+@media (min-width:760px){
+  #projects>.intro,.proj p:not(.subt){text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
+}
+
+/* One row of project images, same height per project */
+.pimgs{display:flex;gap:10px;margin:.9rem 0 1rem}
+.pimgs figure{margin:0;min-width:0}
+.pimgs img{display:block;width:100%;height:auto;border-radius:4px}
+@media (max-width:560px){.pimgs{flex-direction:column}.pimgs figure{flex:none!important}}
+
+.pimgs a{display:block;cursor:zoom-in}
+
+/* Uniform image strip: same height in every project card, quiet look */
+.pimgs{gap:8px;margin:.8rem 0 .9rem}
+.pimgs figure{height:150px}
+.pimgs img{height:100%;object-fit:cover;border-radius:6px;border:1px solid #3b3936}
+@media (max-width:560px){.pimgs figure{height:auto}.pimgs img{height:auto}}
+
+/* Publication thumbnails (square, right of the text) */
+.pub.has-thumb{grid-template-columns:4rem 1fr 112px;align-items:start}
+.pthumb{width:112px;height:112px;object-fit:cover;border-radius:6px;border:1px solid #3b3936;display:block}
+@media (max-width:760px){.pub.has-thumb{grid-template-columns:1fr 88px;gap:0 .8rem}.pub.has-thumb .y{grid-column:1/-1;text-align:left}.pthumb{width:88px;height:88px}}
+
+/* teaching */
+details.theses{margin-top:1.2rem}
+.tlist{list-style:none;padding:0;margin:.8rem 0 0}
+.tlist li{display:grid;grid-template-columns:3.2rem 1fr;gap:.6rem;padding:.35rem 0;border-top:1px solid #3b3936}
+.tlist .y{color:#a29d95;font-variant-numeric:tabular-nums}
+
+/* theses toggle = same look as the project toggles */
+details.theses>summary{font:500 1rem var(--sans);color:var(--ink)}
+details.theses>summary::marker{color:#cf5555}
+.tlist li{font-size:1rem}
+
+/* teaching and experience: titles at publication-list size */
+#teaching .ev h3,#background .ev h3{font-size:1rem;line-height:1.4;margin:.1rem 0 .15rem}
+
+/* paper buttons */
+.pub .pb{margin:.55rem 0 0}
+.pbtn{display:inline-block;font:500 .85rem var(--sans);padding:.28rem .8rem;border:1px solid var(--red);border-radius:99px;color:var(--ink);text-decoration:none;background:transparent}
+a.pbtn:hover{background:var(--red);border-color:var(--red);color:var(--on-red)}
+.pbtn.off{border-color:var(--line);color:var(--muted);cursor:default}
+
+/* German hero text is longer: slightly smaller so it keeps four lines and ends level with the photo */
+@media (min-width:761px){html[lang=de] .hero .sub{font-size:1.03rem}}
+
+/* link from a thesis to the paper it became */
+.tlink{display:block;margin-top:.15rem;font:400 .875rem var(--sans);color:var(--muted);text-decoration-color:var(--red);text-underline-offset:3px}
+.tlink:hover{color:var(--ink)}
+
+/* hero keywords: one line across the full text width */
+.hero{grid-template-areas:"who who" "hd photo" "kw kw" "cta ."}
+.hero .kw{grid-area:kw;list-style:none;margin:1.6rem 0 0;padding:0;display:flex;flex-wrap:nowrap;justify-content:space-between;gap:.4rem}
+.hero .kw li{font:300 .82rem/1 var(--sans);color:#c4beb4;border:1px solid #4a4743;border-radius:99px;padding:.4rem .85rem;white-space:nowrap}
+@media (max-width:900px){.hero .kw{flex-wrap:wrap;justify-content:flex-start;gap:.4rem .45rem}}
+@media (max-width:760px){.hero{grid-template-areas:"who" "hd" "kw" "cta" "photo"}.hero .kw{margin:1.2rem 0 0}}
+
+/* Impressum and 404: heading in the same light display weight as the home page */
+main>h1{font-family:"Inter Display","Inter",sans-serif;font-weight:300!important;letter-spacing:-.02em}
