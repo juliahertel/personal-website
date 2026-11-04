@@ -187,7 +187,6 @@ h2{font-variant:normal;font-weight:400;font-size:1.3rem;letter-spacing:-.01em}
 .pimgs{display:flex;gap:10px;margin:.9rem 0 1rem}
 .pimgs figure{margin:0;min-width:0}
 .pimgs img{display:block;width:100%;height:auto;border-radius:4px}
-@media (max-width:560px){.pimgs{flex-direction:column}.pimgs figure{flex:none!important}}
 
 .pimgs a{display:block;cursor:zoom-in}
 
@@ -195,7 +194,7 @@ h2{font-variant:normal;font-weight:400;font-size:1.3rem;letter-spacing:-.01em}
 .pimgs{gap:8px;margin:.8rem 0 .9rem}
 .pimgs figure{height:150px}
 .pimgs img{height:100%;object-fit:cover;border-radius:6px;border:1px solid #3b3936}
-@media (max-width:560px){.pimgs figure{height:auto}.pimgs img{height:auto}}
+@media (max-width:560px){.pimgs{gap:5px}.pimgs figure{height:auto}.pimgs img{height:auto;border-radius:4px}}
 
 /* Publication thumbnails (square, right of the text) */
 .pub.has-thumb{grid-template-columns:4rem 1fr 112px;align-items:start}
@@ -236,5 +235,5 @@ a.pbtn:hover{background:var(--red);border-color:var(--red);color:var(--on-red)}
 @media (max-width:900px){.hero .kw{flex-wrap:wrap;justify-content:flex-start;gap:.4rem .45rem}}
 @media (max-width:760px){.hero{grid-template-areas:"who" "hd" "kw" "cta" "photo"}.hero .kw{margin:1.2rem 0 0}}
 
-/* Impressum and 404: heading in the same light display weight as the home page */
-main>h1{font-family:"Inter Display","Inter",sans-serif;font-weight:300!important;letter-spacing:-.02em}
+/* phones: smaller hero photo; project images stay side by side */
+@media (max-width:600px){.hero .hero-photo{width:50%;margin:0 auto}}
