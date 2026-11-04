@@ -8,7 +8,7 @@
 
 /* Palette taken from the CV (tccv.cls): ink #303030, claret #801010, slate #506060, straw #F5DD9D */
 :root{
-  --bg:#242424; --panel:#2b2b2b; --ink:#d9d4cb; --muted:#a29d95; --line:#4d4a47;
+  --bg:#232425; --panel:#2a2b2c; --ink:#d9d4cb; --muted:#a29d95; --line:#4a4c4e;
   --claret:#e39a9a; --straw:#f5dd9d; --straw-ink:#303030; --link:#9fc2c2;
   --serif:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -54,7 +54,7 @@ h2{font:400 1.5rem/1.2 var(--serif);font-variant:small-caps;letter-spacing:.05em
 p{max-width:none}
 
 /* CV-like entries */
-.ev{display:grid;grid-template-columns:8.5rem 1fr;gap:1.5rem;padding:.9rem 0;border-bottom:1px solid #3b3936}
+.ev{display:grid;grid-template-columns:8.5rem 1fr;gap:1.5rem;padding:.9rem 0;border-bottom:1px solid #383a3c}
 .ev:last-child{border-bottom:0}
 .when{text-align:right;font-variant:small-caps;color:var(--muted);letter-spacing:.03em;padding-top:.25rem}
 .org{font:400 .9rem var(--sans);color:var(--muted)}
@@ -74,7 +74,7 @@ summary{cursor:pointer;color:var(--link);font:.9rem var(--sans)}
 .filters button{font:.9rem var(--sans);background:none;border:1px solid var(--line);color:var(--muted);padding:.25rem .9rem;border-radius:99px;cursor:pointer}
 .filters button[aria-pressed="true"]{background:var(--straw);border-color:var(--straw);color:var(--straw-ink)}
 .pubs{list-style:none;margin:0;padding:0}
-.pub{display:grid;grid-template-columns:4rem 1fr;gap:1rem;padding:.75rem 0;border-top:1px solid #3b3936}
+.pub{display:grid;grid-template-columns:4rem 1fr;gap:1rem;padding:.75rem 0;border-top:1px solid #383a3c}
 .pub[hidden]{display:none}
 .pub .y{color:var(--muted);text-align:right;font-variant:small-caps}
 .pub .t{margin:0}
@@ -193,18 +193,18 @@ h2{font-variant:normal;font-weight:400;font-size:1.3rem;letter-spacing:-.01em}
 /* Uniform image strip: same height in every project card, quiet look */
 .pimgs{gap:8px;margin:.8rem 0 .9rem}
 .pimgs figure{height:150px}
-.pimgs img{height:100%;object-fit:cover;border-radius:6px;border:1px solid #3b3936}
+.pimgs img{height:100%;object-fit:cover;border-radius:6px;border:1px solid #383a3c}
 @media (max-width:560px){.pimgs{gap:5px}.pimgs figure{height:auto}.pimgs img{height:auto;border-radius:4px}}
 
 /* Publication thumbnails (square, right of the text) */
 .pub.has-thumb{grid-template-columns:4rem 1fr 112px;align-items:start}
-.pthumb{width:112px;height:112px;object-fit:cover;border-radius:6px;border:1px solid #3b3936;display:block}
+.pthumb{width:112px;height:112px;object-fit:cover;border-radius:6px;border:1px solid #383a3c;display:block}
 @media (max-width:760px){.pub.has-thumb{grid-template-columns:1fr 88px;gap:0 .8rem}.pub.has-thumb .y{grid-column:1/-1;text-align:left}.pthumb{width:88px;height:88px}}
 
 /* teaching */
 details.theses{margin-top:1.2rem}
 .tlist{list-style:none;padding:0;margin:.8rem 0 0}
-.tlist li{display:grid;grid-template-columns:3.2rem 1fr;gap:.6rem;padding:.35rem 0;border-top:1px solid #3b3936}
+.tlist li{display:grid;grid-template-columns:3.2rem 1fr;gap:.6rem;padding:.35rem 0;border-top:1px solid #383a3c}
 .tlist .y{color:#a29d95;font-variant-numeric:tabular-nums}
 
 /* theses toggle = same look as the project toggles */
@@ -231,7 +231,7 @@ a.pbtn:hover{background:var(--red);border-color:var(--red);color:var(--on-red)}
 /* hero keywords: one line across the full text width */
 .hero{grid-template-areas:"who who" "hd photo" "kw kw" "cta ."}
 .hero .kw{grid-area:kw;list-style:none;margin:1.6rem 0 0;padding:0;display:flex;flex-wrap:nowrap;justify-content:space-between;gap:.4rem}
-.hero .kw li{font:300 .82rem/1 var(--sans);color:#c4beb4;border:1px solid #4a4743;border-radius:99px;padding:.4rem .85rem;white-space:nowrap}
+.hero .kw li{font:300 .82rem/1 var(--sans);color:#c4beb4;border:1px solid #46484a;border-radius:99px;padding:.4rem .85rem;white-space:nowrap}
 @media (max-width:900px){.hero .kw{flex-wrap:wrap;justify-content:flex-start;gap:.4rem .45rem}}
 @media (max-width:760px){.hero{grid-template-areas:"who" "hd" "kw" "cta" "photo"}.hero .kw{margin:1.2rem 0 0}}
 
@@ -274,3 +274,9 @@ a.pbtn:hover{background:var(--red);border-color:var(--red);color:var(--on-red)}
 @media (min-width:761px){
   .pub .y{text-align:right;padding-right:1.625rem}
 }
+
+/* medium widths: same photo height in both languages (reserve the room the longer German text needs) */
+@media (min-width:761px) and (max-width:1000px){.hero .hd{min-height:292px}}
+
+/* hero photo: when it has to be cropped, crop on the right only (keeps the pointing hand in view) */
+.hero .hero-photo{object-position:left center}
