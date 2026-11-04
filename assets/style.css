@@ -251,3 +251,26 @@ a.pbtn:hover{background:var(--red);border-color:var(--red);color:var(--on-red)}
 
 /* hero: let the last text line sit on the photo's bottom edge (cancel the line box's trailing space) */
 .hero .hd .sub{margin-bottom:-.36em}
+
+/* hero keywords: seven chips still fit in one line on wide screens */
+.hero .kw li{font-size:.76rem;padding:.4rem .62rem}
+.hero .kw{gap:.3rem}
+@media (max-width:1000px){.hero .kw{flex-wrap:wrap;justify-content:flex-start;gap:.4rem .45rem}}
+
+/* wide screens: years start at the left text edge (level with the headings and intro text above) */
+@media (min-width:761px){
+  .ev{grid-template-columns:7.5rem 1fr}
+  .when{text-align:left}
+}
+
+/* wide screens: publication years use the same left-aligned column as the project years */
+@media (min-width:761px){
+  .pub{grid-template-columns:7.5rem 1fr;column-gap:1.5rem}
+  .pub.has-thumb{grid-template-columns:7.5rem 1fr 112px}
+  .pub .y{text-align:left;font-size:.9rem;font-variant-numeric:tabular-nums;letter-spacing:.03em}
+}
+
+/* publication years end where the project year range ends (right-aligned within that width) */
+@media (min-width:761px){
+  .pub .y{text-align:right;padding-right:1.625rem}
+}
