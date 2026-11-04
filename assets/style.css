@@ -222,7 +222,7 @@ a.pbtn:hover{background:var(--red);border-color:var(--red);color:var(--on-red)}
 .pbtn.off{border-color:var(--line);color:var(--muted);cursor:default}
 
 /* German hero text is longer: slightly smaller so it keeps four lines and ends level with the photo */
-@media (min-width:761px){html[lang=de] .hero .sub{font-size:1.03rem}}
+@media (min-width:761px){html[lang=de] .hero .sub{font-size:1.15rem}}
 
 /* link from a thesis to the paper it became */
 .tlink{display:block;margin-top:.15rem;font:400 .875rem var(--sans);color:var(--muted);text-decoration-color:var(--red);text-underline-offset:3px}
@@ -242,3 +242,12 @@ a.pbtn:hover{background:var(--red);border-color:var(--red);color:var(--on-red)}
 @media (max-width:759px){
   .hero .sub,#about p,#projects p,#projects li{text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
 }
+
+/* justified contact text (all widths) */
+#contact>p{text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
+
+/* medium widths: photo fills the row so its bottom stays level with the text */
+@media (min-width:761px) and (max-width:1000px){.hero .hero-photo{align-self:stretch;height:100%;aspect-ratio:auto}}
+
+/* hero: let the last text line sit on the photo's bottom edge (cancel the line box's trailing space) */
+.hero .hd .sub{margin-bottom:-.36em}
