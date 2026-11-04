@@ -237,3 +237,8 @@ a.pbtn:hover{background:var(--red);border-color:var(--red);color:var(--on-red)}
 
 /* phones: smaller hero photo; project images stay side by side */
 @media (max-width:600px){.hero .hero-photo{width:50%;margin:0 auto}}
+
+/* phones: justified text with hyphenation (hero, about, research projects) */
+@media (max-width:759px){
+  .hero .sub,#about p,#projects p,#projects li{text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
+}
