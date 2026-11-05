@@ -171,7 +171,7 @@ h2{font-variant:normal;font-weight:400;font-size:1.3rem;letter-spacing:-.01em}
 .proj details>summary::marker{color:var(--ink)}
 .proj .role ul,.proj .plist{margin:.25rem 0 .5rem;padding-left:1.1rem}
 .proj .role li,.proj .plist li{font-size:1rem;margin:.2rem 0}
-.proj details>summary::marker{color:#cf5555}
+.proj details>summary::marker{color:#a82020}
 
 .hero .who{white-space:nowrap}
 @media (max-width:760px){.hero .who{white-space:normal}}
@@ -209,7 +209,7 @@ details.theses{margin-top:1.2rem}
 
 /* theses toggle = same look as the project toggles */
 details.theses>summary{font:500 1rem var(--sans);color:var(--ink)}
-details.theses>summary::marker{color:#cf5555}
+details.theses>summary::marker{color:#a82020}
 .tlist li{font-size:1rem}
 
 /* teaching and experience: titles at publication-list size */
