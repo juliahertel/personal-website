@@ -311,3 +311,11 @@ body{color:#ece8e1}
 .box{background:#2d2e30;color:#ece8e1;border:1px solid #801010;border-radius:10px;padding:1.3rem 1.6rem}
 .box a{color:#ece8e1;font-weight:600;text-decoration-color:#801010;text-decoration-thickness:2px;text-underline-offset:3px}
 .box a:hover{color:#fff}
+
+/* news gallery: same width as project image rows (text column) */
+.shots{margin:1.2rem 0 .2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem 8px}
+.shots figure{margin:0;min-width:0}
+.shots img{display:block;width:100%;height:auto;aspect-ratio:9/10;object-fit:cover;border-radius:6px;border:1px solid #383a3c;background:#121315}
+.shots figcaption{font:400 .85rem/1.4 var(--sans);color:#cfcbc3;margin-top:.5rem}
+.shots .note{grid-column:1/-1;margin:.2rem 0 0;font:400 .85rem/1.4 var(--sans);color:var(--muted)}
+@media (max-width:760px){.shots{grid-template-columns:repeat(2,1fr);gap:.8rem 5px}}
